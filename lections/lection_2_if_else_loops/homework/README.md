@@ -9,7 +9,7 @@
  * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for
  * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/do...while
 
-# Лекция
+# Практика
 
 
  1. 
