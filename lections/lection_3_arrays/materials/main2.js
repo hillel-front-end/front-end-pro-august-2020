@@ -96,3 +96,75 @@ console.log(array, 'array before');
 // data[data.length] = 12;
 
 // console.log(data.length, 'second length')
+
+
+// size = 10;
+// array = new Array(size);
+// min = - 20;
+// max = 20;
+
+// for (i = 0, sum = 0; i < size; i++) {
+//   arrayItem = Math.round(Math.random() * (max - min) + min);
+//   array[i] = arrayItem;
+
+//   if (arrayItem > 0 && arrayItem % 2 == 0) {
+//     sum += arrayItem;
+//   }
+// }
+
+
+// array[array.length] = 0;
+
+// console.log(array, 'array');
+
+
+
+size = 30;
+array = new Array(size);
+min = -5;
+max = 5;
+
+A = [];
+
+B = [];
+
+for (i = 0; i < size; i++) {
+  arrayItem = Math.round(Math.random() * (max - min) + min);
+  array[i] = arrayItem;
+
+  if (arrayItem > 0) {
+    A[A.length] = arrayItem;
+  }
+
+  if (arrayItem < 0) {
+    B[B.length] = arrayItem;
+  }
+}
+
+
+console.log(A, 'A');
+console.log(B, 'B');
+
+min = A[0];
+max = A[0];
+
+minJ = 0;
+maxJ = 0;
+
+for (j = 0;  j < A.length; j++) {
+  console.log(A[j], 'j');
+
+  if (A[j] > max) {
+    max = A[j];
+    maxJ = j;
+  }
+
+  if (min > A[j]) {
+    min = A[j];
+    minJ = A[j];
+  }
+}
+
+
+console.log(A, 'A');
+console.log(min, max, 'min, max')
