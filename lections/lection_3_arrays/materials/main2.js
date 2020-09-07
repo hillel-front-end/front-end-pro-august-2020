@@ -132,39 +132,58 @@ for (i = 0; i < size; i++) {
   arrayItem = Math.round(Math.random() * (max - min) + min);
   array[i] = arrayItem;
 
-  if (arrayItem > 0) {
+  if (array[i] > 0) {
     A[A.length] = arrayItem;
   }
 
-  if (arrayItem < 0) {
+  if (array[i] < 0) {
     B[B.length] = arrayItem;
   }
 }
 
-
-console.log(A, 'A');
-console.log(B, 'B');
-
 min = A[0];
 max = A[0];
-
 minJ = 0;
 maxJ = 0;
 
-for (j = 0;  j < A.length; j++) {
-  console.log(A[j], 'j');
-
-  if (A[j] > max) {
+for (j = 1; j < A.length; j++) {
+  if (A[j] >= max) {
     max = A[j];
     maxJ = j;
   }
 
-  if (min > A[j]) {
+  if (A[j] <= min) {
     min = A[j];
-    minJ = A[j];
+    minJ = j;
   }
 }
 
+swap = A[minJ];
+A[minJ] = A[maxJ];
+A[maxJ] = swap;
 
-console.log(A, 'A');
-console.log(min, max, 'min, max')
+
+console.log("При массиве", A, "----> ", max, min, 'max, min');
+console.log(minJ, maxJ, 'minJ, maxJ')
+
+
+
+
+
+
+// 3.(**) Перевернуть массив, т.е. если был массив 1, 5, 6, 2, 4 -- то мы должны получить 4, 2, 6, 5, 1. 
+// Нельзя использовать стандартный метод reverse(). Постарайтесь не использовать дополнительный массив.
+
+
+
+
+mass = [1, 2, 3, 4, 5 , 6];
+
+
+for (i = 0; i < mass.length/ 2; i++) {
+  temp = mass[i];
+  mass[i] = mass[mass.length - (1 + i)];
+  mass[mass.length - (1 + i)] = temp;
+}
+
+console.log(mass, 'mass');
