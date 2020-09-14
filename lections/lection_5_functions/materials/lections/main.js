@@ -91,27 +91,72 @@ console.log(arguments, 'arguments');
 
 
 
-function toDo(callback) { // callback = foo
-   callback();
+// function toDo(callback) { // callback = foo
+//    callback();
+// }
+
+// foo = function(){
+//    console.log('fooo');
+// }
+
+// console.log(toDo, 'todo');
+
+// toDo(foo);
+// // arrayFiller();
+
+
+// function a() {
+//    console.log('a')
+// }
+
+// function b() {
+//    console.log('b');
+//    a()
+// }
+
+// b();  
+
+function compareMaxSumArr() {
+   maxI = 0;
+   max = 0;
+
+   for(i = 0; i < arguments.length; i++) {
+      maxSum = sum(arguments[i]);
+
+      if (i == 0) {
+         max = maxSum;
+         maxI = i;
+      }
+
+      if (maxSum > max) {
+         max = maxSum;
+         maxI = i;
+      }
+   }
+
+   return arguments[maxI];
 }
 
-foo = function(){
-   console.log('fooo');
+
+function sum(arr) {
+   sumElements = 0;
+
+   for(var i = 0; i < arr.length; i++) {
+      item = arr[i];
+
+      if (isNumber(item)) {
+         sumElements += item;
+      }
+   }
+
+   return sumElements;
 }
 
-console.log(toDo, 'todo');
-
-toDo(foo);
-// arrayFiller();
-
-
-function a() {
-   console.log('a')
+function isNumber(value) {
+   return !isNaN(value)
 }
+console.log(compareMaxSumArr([1,2,3],[10,12, 13], [4,5,6]));
 
-function b() {
-   console.log('b');
-   a()
-}
 
-b();  
+
+console.log(i, 'i');
