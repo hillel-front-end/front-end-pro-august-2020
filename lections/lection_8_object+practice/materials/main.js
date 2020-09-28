@@ -73,30 +73,30 @@ player = {
 }
 
 
-console.log(player.name)
-console.log(player.age)
+// console.log(player.name)
+// console.log(player.age)
 player.run();
 
 key = 'age';
 
-console.log(player[key])
+// console.log(player[key])
 
 key = 'name';
-console.log(player[key])
+// console.log(player[key])
 
 // player.key
 
 player.foo = '123';
-console.log(player, 'pla');
+// console.log(player, 'pla');
 
 player['foo'] = 'fggggg';
-console.log(player, 'pla');
+// console.log(player, 'pla');
 
 player = Object.freeze(player);
 
 player.foo = [1, 2];
 player.name = "Pety";
-console.log(player, 'player');
+// console.log(player, 'player');
 
 
 
@@ -121,8 +121,6 @@ function dictionary() {
         CODES[city.toLowerCase()] = code;
     }
 
-
-
     return {
         getCode: getCode,
         setCode: setCode
@@ -131,13 +129,13 @@ function dictionary() {
 
 var config = dictionary();
 
-console.log(config.getCode('Kiyv'));
+console.log(config.getCode('Kiyv'), '!!!!!!!!!!!!!!!!!!!');
 
-config.setCode('DniPro', 8645);
+// config.setCode('DniPro', 8645);
 
-console.log(config.getCode('Dnipro'), 'Dnipro')
+// console.log(config.getCode('Dnipro'), 'Dnipro')
 
-config.getCode('Dnasdsadasdipro')
+// config.getCode('Dnasdsadasdipro')
 
 
 var g = {
@@ -173,7 +171,7 @@ function arryFiller(mass) { // mass = arr
     console.log(mass, 'mass');
 }
 
-arryFiller(arr);
+// arryFiller(arr);
 
 g = [
         [ 1, 2, 3, [3.1]], 
@@ -185,4 +183,4 @@ function convert(arr) {
 
 }
 
-convert(g);//[1,2,3,3.1,4,5,6,7,8]
+// convert(g);//[1,2,3,3.1,4,5,6,7,8]
