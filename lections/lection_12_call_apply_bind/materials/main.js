@@ -11,6 +11,10 @@ var person = {
     name: "Valera"
 }
 
+var personSecond = {
+    name: "Pety"
+}
+
 // person.getName = getName;
 // console.log(person.getName());
 // delete person.getName;
