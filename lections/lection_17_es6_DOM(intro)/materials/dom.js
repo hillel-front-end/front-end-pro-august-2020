@@ -24,7 +24,7 @@ const divs = document.getElementsByTagName('div');
 
 var classes = document.getElementsByClassName('item');
 
-// console.log(classes, 'classes');
+console.log(classes, 'classes');
 
 const id = document.getElementById('foo');
 
@@ -95,3 +95,23 @@ console.dir(markup2, 'markupo');
 const input = document.querySelector('[type="text"]');
 
 console.dir(input.value = 'Hello front-end pro', 'input');
+
+
+const block = document.querySelector('.block');
+
+console.dir(block, 'block');
+
+// block.style.color = 'red';
+
+// block.foo = 11111;
+
+
+setTimeout(() => {
+    // element.align = 'center';
+    // element.classList.remove('accent');
+    block.style.color = 'red';
+    block.style.fontSize = '16px';
+}, 4000);
+
+
+

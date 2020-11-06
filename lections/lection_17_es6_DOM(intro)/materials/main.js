@@ -103,4 +103,4 @@ function foo2({name, coast}, zoo = []) {
     console.log(zoo, 'zoo');
 }
 
-foo2({ name: 'sprite', coast: 30, isBougth: false }, [{name: 'lion'}])
+foo2({ name: 'sprite', coast: 30, isBougth: false }, [{name: 'lion'}]);

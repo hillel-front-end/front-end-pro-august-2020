@@ -37,10 +37,33 @@
             padding: 3px;
             border: 1px solid red;
         }
+
+        .box {
+            width: 100px;
+            height: 100px;
+
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            background-color: gray;
+            transition: all .5s;
+        }
+
+        .box:nth-child(1) {
+            background-color: red;
+        }
+
+        .box:nth-child(2) {
+            background-color: blue;
+        }
+
+        .box:nth-child(3) {
+            background-color: chocolate;
+        }
     </style>
 </head>
 <body clas>
-    <div class="parent">1
+    <!-- <div class="parent">1
         <div class="item">1.1</div>
     </div>
     <div class="item">2</div>
@@ -53,7 +76,15 @@
     </div>
 
     <input type="text" value="11111">
+
+    <div class="block">132</div> -->
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
 </body>
 <!-- <script src="main.js"></script> -->
-<script src="dom.js"></script>
+<!-- <script src="dom.js"></script> -->
+<script src="practice.js"></script>
 </html>
