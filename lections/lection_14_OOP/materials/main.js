@@ -88,6 +88,12 @@ function HTMLElement(tagName) {
     }
              
 }
+
+var obj = {}
+
+obj.showPicture = function() {
+    
+}
  
 console.dir(HTMLElement, 'HTMLElement');
 
