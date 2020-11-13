@@ -1,10 +1,11 @@
-﻿# Изучить материал
+﻿﻿# Изучить материал
 + https://learn.javascript.ru/keyboard-events
 + https://learn.javascript.ru/multi-insert
 + https://learn.javascript.ru/event-bubbling
 + https://learn.javascript.ru/event-delegation
 + https://learn.javascript.ru/behavior
 + https://learn.javascript.ru/modifying-document#ustarevshie-metody-vstavki-udaleniya
+https://github.com/hillel-front-end/front-end-basic-online-2020-june/blob/master/lections/lection_012_sass-finish%2Bforms/materials/lections/011_checked.html
 
 # Лекция
 1) 
@@ -18,7 +19,13 @@
 			},
 			{
 				title: 'title 2',
-				handler: 'ActionSaveAs'
+				handler: 'ActionSaveAs',
+                items: [
+                    {
+                        title: 'title 1',
+                        handler: 'ActionAdd'
+                    }
+                ]
 			},
 			{
 				title: 'title 3',

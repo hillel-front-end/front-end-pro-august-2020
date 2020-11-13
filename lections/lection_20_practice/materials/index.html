@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+         label.open {
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 10px;
+            display: inline-block;
+            transition: all .5s;
+
+            cursor: pointer;
+        }
+
+
+
+        #open {
+            display: none;
+        }
+
+        #open:checked ~ .hello{
+            opacity: 1;
+        }
+
+        .header, .content {
+            padding: 10px;
+            border: 1px solid red;
+            margin-bottom: 50px;
+        }
+
+        .content:hover {
+            background-color: red;
+        }  
+
+        .modal {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+
+            display: none;
+        }
+
+        .modal__backdrop {
+            background: rgb(0 0 0 / 69%);
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal__backdrop-container {
+            position: relative;
+            z-index: 1;
+            width: 50%;
+            min-height: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px 10px;
+
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items: center; */
+        }
+
+        .modal__footer {
+            text-align: right;  
+        }
+
+        .modal__close {
+            position: absolute;
+            right: 14px;
+            top: 9px;
+            color: red;
+            font-size: 15px;
+            border: 1px solid red;
+            padding: 2px;
+            border-radius: 32%;
+
+            cursor: pointer;
+
+            transition: all .5s;
+        }
+
+        .modal__close:hover {
+            transform: scale(0.5);
+        }
+
+
+        #open:checked ~ .libs .modal {
+            display: block;
+        }
+
+        .modal__backdrop-close {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            z-index: 0;
+        }
+        
+        .open:active {
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="open">
+
+    <div class="container">
+        <div class="header">
+            Header
+            <label for="open" class="open">Open Modal</label>
+        </div>
+        <div class="content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti exercitationem, optio magni eveniet mollitia distinctio eum laboriosam error itaque at consequatur cumque quo illum, harum, minima sunt? Nemo, omnis pariatur?
+            Similique quibusdam cumque architecto veritatis est numquam vitae. Aliquam repudiandae excepturi ratione doloribus similique, exercitationem obcaecati tempora voluptatum mollitia maiores eveniet laborum animi in itaque! Dicta accusantium porro animi rerum.
+            Iure dolorum quis ratione ea atque quo laboriosam odit facere numquam hic quibusdam aut sapiente culpa quos voluptatem assumenda, similique, at optio, eveniet iste? Molestias distinctio quia hic nihil aperiam?
+            Eum error, delectus sapiente, modi fugit necessitatibus omnis neque totam possimus debitis quisquam molestiae praesentium quam nisi fugiat vero? Nisi, officiis. Non deleniti ipsam soluta velit, accusamus hic libero enim?
+            Itaque sapiente error eos totam aperiam, quis voluptatibus iste quae et ipsa esse veniam tenetur quas eius ex reprehenderit neque, commodi nisi sint. Ad sit soluta eligendi corrupti ullam laborum?
+            Dolorum cupiditate fugit, ullam laudantium minus commodi perferendis consequatur distinctio dolor molestias nemo quas expedita delectus deserunt harum excepturi, cum voluptatum? Consequuntur quidem, deserunt eaque soluta illo quisquam doloremque perferendis.
+            Itaque modi laborum dolor ad id libero harum quidem, blanditiis temporibus odit eveniet vero. Tempore pariatur architecto, aperiam accusantium repudiandae deserunt ad, odit velit corporis debitis distinctio quia doloribus hic?
+            Nisi laborum quibusdam minus maiores, similique provident, corrupti qui deleniti voluptatem ipsa, vero dignissimos natus? Neque similique ratione, reprehenderit quos odio doloribus magnam nostrum, suscipit illo expedita beatae ea nesciunt.
+            Temporibus fuga aut aliquid, harum sed ex dolorum eaque quam ad sit illo, veniam corporis esse! Pariatur qui cum beatae voluptate consequatur porro debitis. Mollitia eius adipisci nostrum amet possimus.
+            Possimus, ad corrupti assumenda animi adipisci dolorem! Ipsam repudiandae dignissimos labore ipsa dolorum. Enim autem, unde quae ipsa maxime sit in doloribus earum perspiciatis cupiditate atque neque aliquam sequi laboriosam?
+        </div>
+
+    </div>
+
+    <div class="libs">
+        <div class="modal">
+            <div class="modal__backdrop">
+                <div class="modal__backdrop-container">
+                    <label for="open" class="modal__close"> X </label>
+                    <div class="modal__header">
+                        Header
+                        <hr />
+                    </div>
+    
+    
+    
+                    <div class="modal__content">
+                        Content
+                    </div>
+    
+    
+                    <div class="modal__footer">
+                        <hr />
+                    
+                        <label for="open" class="open">Close</label>
+                    </div>
+                </div>
+                
+                <label for="open" class="modal__backdrop-close"></label>
+            </div>
+        </div>
+    </div>
+
+    <label for="open" class="open">Open Modal</label>
+
+</body>
+</html>
