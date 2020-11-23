@@ -50,43 +50,41 @@ app.get("/", function (req, res) {
 });
 
 //http://localhost:3000/ (GET)
-var a = [
-  {
-    name: "Valera",
-    age: 23,
-    lastName: "Adasd",
-    job: "front-end",
-  },
-  {
-    name: "Valera",
-    age: 23,
-    lastName: "Adasd",
-    job: "front-end",
-  },
-  {
-    name: "Valera",
-    age: 23,
-    lastName: "Adasd",
-    job: "front-end",
-  },
-];
 
-const data = [
-  { name: "Valera - 2", age: 10 },
-  { name: "Valera - 2", age: 9 },
-  { name: "Valera - 2", age: 30 },
-  { name: "Valera", age: 20 },
-  { name: "Valera - 2", age: 15 },
-  { name: "Valera - 2", age: 12 },
-  { name: "Valera - 3", age: 22 },
-];
 
 app.get("/candidates", function (req, responce) {
+  console.log(" call --------> /candidates");
   // req - обьект запроса, res -- обьект ответа
   console.log("THIS PATH - /candidates"); // Вызов обработчика на запрос с path ('/')
   responce.status(200); // вернуть статус запроса 200
-  responce.send(data.filter((item) => req.query.age > 15)); // вернуть данные туда от куда пришел запрос
+  // console.log(Object.keys(req.query), "query");
+  if (req.query.minAge) {
+    const { minAge, maxAge } = req.query;
+    responce.send(candidates.filter(({ age }) => age > minAge && age < maxAge));
+    return;
+  }
+
+  responce.send(candidates); // вернуть данные туда от куда пришел запрос
 });
+
+//http://localhost:3003/candidates/:foo
+
+app.get("/candidates/:foo", function (req, responce) {
+  console.log(" call --------> /candidates/:id");
+  console.log(req.params.foo, "params ");
+
+  read("./models/data.json", (error, jsonPayload) =>
+    responce.status(404).send(jsonPayload)
+  );
+});
+
+// (error, jsonPayload) => {
+//   responce.status(404).send(jsonPayload);
+// }
+
+function read(url, callback) {
+  fs.readFile(url, "utf-8", callback);
+}
 
 /*
  статусы (res.status(200) - говорят о том как совершился запрос, положиельно(получили необходимые данные) или 
@@ -98,13 +96,6 @@ app.get("/candidates", function (req, responce) {
 
 //http://localhost:3000/all-users (GET)
 
-app.get("/all-users", function (request, responce) {
-  let data = JSON.stringify({ content: "HEllo world" });
-  console.log("THIS PATH - /all-users", responce);
-
-  responce.send(data);
-});
-
 app.get("/user", function (req, res) {});
 
 /*
@@ -112,7 +103,7 @@ app.get("/user", function (req, res) {});
  как свойство обьекта req.params -> req.params.id == 123
  Если бы было '/user/:foo', то req.params.foo == 123
 */
-app.get("/user/:id", function (req, res) {});
+app.get("/user/id", function (req, res) {});
 
 // Получить список всех пользователей
 function getAllusers(req, res) {
