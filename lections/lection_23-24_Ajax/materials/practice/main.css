@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    padding: 30px;
+    position: fixed;
+
+
+    transition: left .5s;
+}
+
+form:nth-child(even) {
+    left:100%;
+}
+
+form:nth-child(odd) {
+    left: -300px;
+}
+
+form.center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    margin-top: 10px;
+}

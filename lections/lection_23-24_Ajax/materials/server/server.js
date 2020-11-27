@@ -4,8 +4,7 @@ var app = express();
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/json" }));
+
 
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -19,6 +18,32 @@ app.use(function (req, res, next) {
 });
 
 const port = 3005;
+
+function random(max, min) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+app.post("/", function (req, responce) {
+  console.log(req.body)
+  const value = random(30, 60);
+
+    if (value > 50) {
+      responce
+        .status(200)
+        .send({
+          success: 'ok',
+          value
+        })
+    } else {
+      responce
+      .status(401)
+      .send({
+        success: 'error',
+        value
+      })
+    }
+
+});
 
 app.get("/users", function (req, responce) {
   console.log(req.params.foo, "params ");

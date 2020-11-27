@@ -1,20 +1,12 @@
-﻿# Изучить материал
-
-+ https://learn.javascript.ru/ajax-nodejs
-+ https://learn.javascript.ru/ajax-xmlhttprequest
-+ https://habrahabr.ru/post/50147/
-+ http://xiper.net/learn/also-need-to-know/how-does-a-browser-communicate-with-the-server
-+ http://xiper.net/learn/also-need-to-know/get-or-post
-+ http://xiper.net/learn/also-need-to-know/how-does-a-browser-http-request
-+ http://xiper.net/learn/also-need-to-know/twenty-things-about-browsers-and-web/ip-addresses-and-dns
-
-# Практика
+﻿# Практика
 
 * Создать форму с полями login, password и кнопку sign in. По нажатию на кнопку введенные данные с формы отправляются на сервер. 
+* На стороне client  валидация login и password(поля не должны быть пустыми)
 * Сервер должен проверить в файле users.json существует ли такой юзер с отправленными данными(login, password).
 Пример массива из файла users: 
 `[{"login":"admin", "password": "admin", "id": 1}]`
-* Сервер должен отправить на client id пользователя, и в запрос указать status 200. Если такого пользователя не существует то 'Not found' и status 401.
+* Сервер должен отправить на client id пользователя, и в запрос указать status 200. Если такого пользователя не существует то '
+ 'Unauthorized' и status 401.
 * Тренируемся дальше. Задача по id получить список товаров по юузеру. Логика работы следующая:
 
 1) Как только вы получили id на client-е (от сервера) - отпрвить его обратно на сервер. За получением списка товаров по юзеру.
