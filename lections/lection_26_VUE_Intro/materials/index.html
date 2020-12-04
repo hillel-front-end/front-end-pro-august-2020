@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: greenyellow;
+        }
+    </style>
+    
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="user">
+            {{ 
+                getIsBought() ? 
+                'Продано'
+                    :
+                'Не продано'
+            }}
+            <span>
+                {{ getStore() }}
+            </span>
+
+        </div>
+        {{ arr }}
+
+        <hr>
+
+        <ul v-html="getStore()"></ul>
+
+
+        <a :href="href">go To hillel</a>
+
+        <hr>
+
+        <input type="text" v-model="login"> 
+
+        <br />
+
+        <button :disabled="login.length == 0">
+            click
+        </button>
+
+<!-- 
+        <div class="hello" v-show="login">
+            Hello {{ login }}
+        </div> -->
+
+        <hr>
+
+        <input type="number" v-model="age">
+
+        <div class="hello" v-if="age <= 18">
+            Привет {{ login }}
+        </div>
+        <div class="hello" v-else-if="age > 18 && age < 30">
+            Добрый день {{ login }}
+        </div>
+        <div class="hello" v-else>
+            Здравствуйте {{ login }}
+        </div>
+
+        <hr>
+
+        <!-- <button v-on:click="onClick">click</button> -->
+        <button @click="addProduct()">click</button>
+
+        <input type="text" v-model="product">
+        <!-- <button @click="onClick">add</button> -->
+        <!-- <button @mousemove="onClick">click</button> -->
+
+
+        <div v-for="good in goods" v-show="good.isBougth">
+            {{ good.name }}
+        </div>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -187,49 +187,169 @@ console.log(1);
 
 
 
-function processData() {
-   console.log('processing data');
-}
+// function processData() {
+//    console.log('processing data');
+// }
 
-function sendToFacebook(){
-   console.log('send to facebook');
-}
+// function sendToFacebook(){
+//    console.log('send to facebook');
+// }
 
 
-ajax({ 
-   url: 'http://localhost:3005/auth',
-   method: 'get',
-   data:{}
-})
+// ajax({ 
+//    url: 'http://localhost:3005/auth',
+//    method: 'get',
+//    data:{}
+// })
 
-.then((resp) => {
-   console.log('ok', resp);
+// .then((resp) => {
+//    console.log('ok', resp);
 
-   if (resp.id) {
-      return getUserID(resp);
-   }
-},
-() => {
-   console.log('error')
-})
+//    if (resp.id) {
+//       return getUserID(resp);
+//    }
+// },
+// () => {
+//    console.log('error')
+// })
 
-.then((id) => {
-   console.log(id, 'id then 2, resolved');
+// .then((id) => {
+//    console.log(id, 'id then 2, resolved');
 
-  return ajax({ 
-      url: 'http://localhost:3005/getUserInfoById',
-      method: 'get',
-      data:{}
+// //   return ajax({ 
+// //       url: 'http://localhost:3005/getUserInfoById',
+// //       method: 'get',
+// //       data:{}
+// //    })
+// })
+
+// .then((response) => {
+//    console.log(response, 'response then # 3 resolve');
+// },
+// () => {
+
+// });
+
+// function getUserID(user) {
+//    return user.id;
+// }
+
+
+function getData() {
+   new Promise((res, rej) => {
+      res('Erorr');
    })
-})
-
-.then((response) => {
-   console.log(response, 'response then # 3 resolve');
-},
-() => {
-
-});
-
-function getUserID(user) {
-   return user.id;
+   .then((resp) => {
+      console.log('ok', resp);
+   
+      if (false) {
+         return getUserID(resp);
+      } else {
+         throw Error('Exeption lololo');
+      }
+   })
+   .catch((error) => {
+      console.error('error', error);
+      return '123123';
+   })
+   .finally((data) => {
+      if (true) {
+         // getData();
+      }
+      console.log('work', data);
+   })
 }
+
+// getData();
+
+
+// Promise.all([
+//    new Promise(res => {
+//       res(1);
+//    }),
+//    new Promise(res => {
+//       res(2);
+//    }),
+//    new Promise(res => {
+//       res(3);
+//    })
+// ])
+
+
+// Promise.all([
+//    ajax({ 
+//       url: 'http://localhost:3005/getUserInfoById1',
+//       method: 'get',
+//       data:{}
+//    }),
+//    ajax({ 
+//       url: 'http://localhost:3005/getUserInfoById2',
+//       method: 'get',
+//       data:{}
+//    }),
+//    ajax({ 
+//       url: 'http://localhost:3005/getUserInfoById4',
+//       method: 'get',
+//       data:{}
+//    })
+// ])
+// .then((data) => {
+//    console.log(data, 'Promise.all');
+
+// }, (data) => {
+//    console.log(data, 'data');
+// })
+
+
+// ----------- fetch / axios -------------
+
+
+// fetch('http://localhost:3005/getUserInfoById1')
+
+// .then((response) => {
+//    return response.json()
+// }, (error) => {
+//    console.log(error, 'reject')
+// })
+// .then((data) => {
+//    console.log(data, 'data');
+// })
+
+// -------- async await -----------
+
+
+// async function foo() {
+//    try {
+//       const response =  await fetch('http://localhost:3005/getUserInfoById1');
+
+
+//       console.log(response, 'response');
+   
+//       const data =  await response.json();
+   
+//       console.log(data, 'data');
+   
+   
+//       const data2 =  await (await fetch('http://localhost:3005/getUserInfoById1')).json()
+   
+//       console.log(data2, 'data2');
+   
+//       return 'Hello world';
+//    } catch(error) {
+//       console.log(error, 'error');
+//    }
+// }
+
+// console.log(foo(), 'foo');
+
+// const z = async () => console.log(await foo());
+// foo()
+//    .then((resp) => console.log(resp, 'resp'));
+
+  
+// z()
+
+  
+
+
+// console.log('After fooo');

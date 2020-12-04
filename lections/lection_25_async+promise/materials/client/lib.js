@@ -5,11 +5,12 @@ function ajax({ url, method, data}) {
       
     xhttp.onload = () => {
       const response =
-        typeof xhttp.response === "string"
+        (typeof xhttp.response === "string" && xhttp.status == 200)
           ? JSON.parse(xhttp.response)
           : xhttp.response;
 
-          resolve(response)
+          xhttp.status == 200?  resolve(response) : reject(response)
+
     };
   
     xhttp.onerror = () => {

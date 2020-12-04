@@ -60,8 +60,24 @@ function getUsers() {
 	]
 }
 
-app.get('/getUserInfoById', function(req, res) {
+app.get('/getUserInfoById1', function(req, res) {
 	res
 	.status(200)
 	.send(getUsers());
+});
+
+
+app.get('/getUserInfoById2', function(req, res) {
+	res
+	.status(200)
+	.send(getUsers());
+});
+
+
+app.get('/getUserInfoById3', function(req, res) {
+	setTimeout(() => {
+		res
+		.status(200)
+		.send(getUsers());
+	}, 6000);
 });
