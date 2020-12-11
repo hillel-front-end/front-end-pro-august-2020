@@ -1,0 +1,6 @@
+[
+  { "name": "juice", "coast": 1, "isBought": false },
+  { "name": "juice-1", "coast": 1, "isBought": true },
+  { "name": "juice-2", "coast": 1, "isBought": false },
+  { "name": "juice-3", "coast": 1, "isBought": true }
+]
